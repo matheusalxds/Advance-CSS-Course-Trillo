@@ -1,6 +1,7 @@
 ///////////////////////////////////
 ///////////// LOGO ////////////////
 ///////////////////////////////////
+
 .logo {
   height: 3.25rem;
   margin-left: 3rem;
@@ -12,10 +13,10 @@
 
 .search {
   flex: 0 0 40%;
-
   display: flex;
   align-items: center;
   justify-content: center;
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -60,7 +61,7 @@
   &__icon {
     height: 2rem;
     width: 2rem;
-  //  we can use fill to set the icon color
+    //  we can use fill to set the icon color
     fill: var(--color-grey-dark-3)
   }
 }
@@ -68,23 +69,51 @@
 ///////////////////////////////////
 ///////////// USER NAV ////////////
 ///////////////////////////////////
-.user-nav {
-  background-color: yellowgreen;
-  &__icon-box {
 
+.user-nav {
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+
+  & > * {
+    // Will select each wrapper element inside of user-nav, will select each wrapper div
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
+  &__icon-box {
+    // these attributes was added in & > * {}
+    // display: flex;
+    // align-items: center;
+    position: relative;
   }
 
   &__icon {
     height: 2.25rem;
     width: 2.25rem;
+    fill: var(--color-grey-dark-2);
   }
 
   &__notification {
-
-  }
-
-  &__user {
-
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__user-photo {
@@ -92,7 +121,10 @@
     border-radius: 50%;
   }
 
+  &__user {
+    // we don't need to use this, cuz it'll be formatted by & > * { }
+  }
   &__user-name {
-
+    // we don't need to use this, cuz it'll be formatted by & > * { }
   }
 }
